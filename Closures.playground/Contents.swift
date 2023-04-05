@@ -14,7 +14,8 @@ let volunteerCounts = [1,3,40,32,2,53,77,13]
 
 
 //let volunteersSorted = volunteerCounts.sorted(by: isAscending)
-let volunteersSorted = volunteerCounts.sorted(by: { i, j in i < j })
+// positional argument syntax
+let volunteersSorted = volunteerCounts.sorted(by: { $0 < $1 })
 print(volunteersSorted)
 
 
