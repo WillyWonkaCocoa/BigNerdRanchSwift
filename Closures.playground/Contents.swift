@@ -13,7 +13,7 @@ let volunteerCounts = [1,3,40,32,2,53,77,13]
 //}
 
 var sortInPlaceVolunteerCounts = [1,3,40,32,2,53,77,13]
-sortInPlaceVolunteerCounts.sort{$0 < $1}
+sortInPlaceVolunteerCounts.sort()
 
 //let volunteersSorted = volunteerCounts.sorted(by: isAscending)
 // trailing closure syntax
@@ -57,3 +57,6 @@ let estimatedParticipation = passingAverages.reduce(5) {
     (estimationSoFar: Int, currentOrgAverage: Int) -> Int in
     return estimationSoFar + currentOrgAverage
 }
+
+//Gold Challenge: perform all the calculations on volunteerAverages array in one long line
+let sortedRoundedAverages = volunteerAverages.map { Int($0.rounded())}.filter { $0 >= 10 }.sorted{$0 < $1}
