@@ -12,6 +12,8 @@ let volunteerCounts = [1,3,40,32,2,53,77,13]
 //    //code
 //}
 
+var sortInPlaceVolunteerCounts = [1,3,40,32,2,53,77,13]
+sortInPlaceVolunteerCounts.sort{$0 < $1}
 
 //let volunteersSorted = volunteerCounts.sorted(by: isAscending)
 // trailing closure syntax
