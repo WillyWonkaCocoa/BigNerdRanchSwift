@@ -75,3 +75,36 @@ func greetByMiddleName(fromFullName name: (first: String,
     print("Hey, \(middleName)")
 }
 greetByMiddleName(fromFullName: ("Alice","Richardsddasdfds","Ward"))
+
+func siftBeans(fromGroceryList list: [String]) -> (beans: [String], otherGroceries: [String]){
+    var beans = [String]()
+    var otherGroceires = [String]()
+    for item in list{
+        if item.hasSuffix("beans"){
+            beans.append(item)
+        }else{
+            otherGroceires.append(item)
+        }
+    }
+    
+    return (beans, otherGroceires)
+}
+
+let result = siftBeans(fromGroceryList: ["green beans",
+                                            "milk",
+                                            "black beans",
+                                            "pinto beans",
+                                            "apples"])
+   
+result.beans == ["green beans", "black beans", "pinto beans"] // true
+result.otherGroceries == ["milk", "apples"] // true
+
+func printGreeing() -> Void {
+    print("Hello")
+}
+
+// variadic parameters: takes zero or more input values for its argument
+// a function can only have one variadic parameter, and it cannot be marked inout
+// typically the final parameter on the list
+
+
