@@ -60,3 +60,17 @@ let estimatedParticipation = passingAverages.reduce(5) {
 
 //Gold Challenge: perform all the calculations on volunteerAverages array in one long line
 let sortedRoundedAverages = volunteerAverages.map { Int($0.rounded())}.filter { $0 >= 10 }.sorted{$0 < $1}
+
+// Functions as return types
+func makeCharacterRemover(for character: Character) -> (String) -> String {
+    func removeFrom(_ input: String) -> String {
+        return input.filter { $0 != character }
+    }
+    return removeFrom
+}
+
+let removeLowerCaseLs = makeCharacterRemover(for: "l")
+let strangeGreeting = removeLowerCaseLs("Hello, World!")
+
+let removeLowerCaseOs = makeCharacterRemover(for: "o")
+let strangerGreeting = removeLowerCaseOs(strangeGreeting)
