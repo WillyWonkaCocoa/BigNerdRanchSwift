@@ -117,6 +117,17 @@ enum ShapeDimensions {
             return w * h
         }
     }
+    
+    func perimeter() -> Double {
+        switch self {
+        case .point:
+            return 0
+        case let .square(side: side):
+            return 4 * side
+        case let .rectangle(width: w, height: h):
+            return 2 * (w + h)
+        }
+    }
 }
 
 var squareShape = ShapeDimensions.square(side: 10.0)
@@ -126,3 +137,7 @@ var pointShape = ShapeDimensions.point
 print("square's area = \(squareShape.area())")
 print("rectangle's area = \(rectShape.area())")
 print("point's area = \(pointShape.area())")
+
+print("square's perimeter = \(squareShape.perimeter())")
+print("rectangle's perimeter = \(rectShape.perimeter())")
+print("point's perimeter = \(pointShape.perimeter())")
