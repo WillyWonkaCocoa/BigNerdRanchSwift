@@ -14,8 +14,8 @@ let volunteerCounts = [1,3,40,32,2,53,77,13]
 
 
 //let volunteersSorted = volunteerCounts.sorted(by: isAscending)
-// positional argument syntax
-let volunteersSorted = volunteerCounts.sorted(by: { $0 < $1 })
+// trailing closure syntax
+let volunteersSorted = volunteerCounts.sorted{ $0 < $1 }
 print(volunteersSorted)
 
 
