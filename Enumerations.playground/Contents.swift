@@ -152,3 +152,25 @@ print("rectangle's perimeter = \(rectShape.perimeter())")
 print("point's perimeter = \(pointShape.perimeter())")
 print("right triangle's perimeter = \(rightTriangleShape.perimeter())")
 
+// recursive enumerations
+// because the compiler looks at each case and figures out which case requires the most memory + a bit more to keep track of which case is assigned, recursive enumerations will lead to error because it would require infinite memory
+
+// for ShapeDimensions the actual size of an instance is 17 bytes, large enough to store the 2 Double's of rectangel + 1 byte to keep track of where it is
+
+// using indirect keyword will cause the compiler to use pointers under the hood (8 bytes on a 64bit architecture)
+
+enum FamilyTree {
+       case noKnownParents
+    indirect case oneKnownParent(name: String, ancestors: FamilyTree)
+    indirect case twoKnownParents(fatherName: String,
+                            paternalAncestors: FamilyTree,
+                            motherName: String,
+                            maternalAncestors: FamilyTree)
+   }
+
+let fredAncestors = FamilyTree.twoKnownParents(
+        fatherName: "Fred Sr.",
+        paternalAncestors: .oneKnownParent(name: "Beth",
+                                           ancestors: .noKnownParents),
+        motherName: "Marsha",
+        maternalAncestors: .noKnownParents)
