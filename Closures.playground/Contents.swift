@@ -14,11 +14,7 @@ let volunteerCounts = [1,3,40,32,2,53,77,13]
 
 
 //let volunteersSorted = volunteerCounts.sorted(by: isAscending)
-let volunteersSorted = volunteerCounts.sorted(by: {
-    (i: Int, j: Int) -> Bool in
-    return i < j
-}
-)
+let volunteersSorted = volunteerCounts.sorted(by: { i, j in i < j })
 print(volunteersSorted)
 
 
