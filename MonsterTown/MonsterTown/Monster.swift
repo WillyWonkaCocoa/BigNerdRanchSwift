@@ -13,6 +13,7 @@ class Monster {
     var town: Town?
     var name = "Monster"
     
+    // type methods, work with type level info (call other type methods and type properties) but not with any instance properties.
     
     func terrorizeTown() {
         if town != nil {
