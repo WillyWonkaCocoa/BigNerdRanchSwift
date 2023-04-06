@@ -8,9 +8,8 @@
 import Foundation
 
 var myTown = Town()
-var yourTown = myTown // Now there are two towns! structs/enums store the instance's entire value & are called value types that follow value semantics
+//var yourTown = myTown // Now there are two towns! structs/enums store the instance's entire value & are called value types that follow value semantics
 myTown.changePopulation(by: 500)
-print("myTown has \(myTown.population) and yourTown has \(yourTown.population)")
 
 let fredTheZombie = Zombie() // classes store a reference to another location in memory where the instance is stored
 // the reference is copied and passed around: 64 bits (8 bytes) of memory regardless of the size of the actual instance
@@ -22,6 +21,3 @@ fredTheZombie.town?.printDescription()
 //downcasting, which is unsafe! can force cast as! or conditional cast as?
 // upcasting is always safe, can check type with is keyword: is fredTheZombie is Zombie
 
-var frederickTheZombie = fredTheZombie // Still only one zombie!
-frederickTheZombie.name = "Frederick"
-print("Fred's name is \(fredTheZombie.name)")
