@@ -20,5 +20,6 @@ struct Town {
     // mutating keyword asks compiler to make implicit self arg inout
     mutating func changePopulation(by amount: Int) {
         population += amount
+        population = (population >= 0) ? population : 0
     }
 }

@@ -21,3 +21,17 @@ fredTheZombie.town?.printDescription()
 //downcasting, which is unsafe! can force cast as! or conditional cast as?
 // upcasting is always safe, can check type with is keyword: is fredTheZombie is Zombie
 
+let buffyTheVampire = Vampire()
+buffyTheVampire.town = myTown
+buffyTheVampire.town?.printDescription()
+buffyTheVampire.terrorizeTown()
+buffyTheVampire.town?.printDescription()
+buffyTheVampire.printThralls()
+
+buffyTheVampire.terrorizeTown()
+buffyTheVampire.town?.printDescription()
+buffyTheVampire.printThralls()
+
+buffyTheVampire.terrorizeTown()
+buffyTheVampire.town?.printDescription()
+buffyTheVampire.printThralls()

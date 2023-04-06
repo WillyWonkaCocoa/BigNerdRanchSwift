@@ -11,6 +11,7 @@
 		5D54FB2A29DF16BF0081F342 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D54FB2929DF16BF0081F342 /* Town.swift */; };
 		5D54FB2C29DF18810081F342 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D54FB2B29DF18810081F342 /* Monster.swift */; };
 		5D54FB2E29DF19FE0081F342 /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D54FB2D29DF19FE0081F342 /* Zombie.swift */; };
+		5D54FB3029DF26850081F342 /* Vampire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D54FB2F29DF26850081F342 /* Vampire.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		5D54FB2929DF16BF0081F342 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		5D54FB2B29DF18810081F342 /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		5D54FB2D29DF19FE0081F342 /* Zombie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
+		5D54FB2F29DF26850081F342 /* Vampire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vampire.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				5D54FB2B29DF18810081F342 /* Monster.swift */,
 				5D54FB2D29DF19FE0081F342 /* Zombie.swift */,
 				5D54FB2929DF16BF0081F342 /* Town.swift */,
+				5D54FB2F29DF26850081F342 /* Vampire.swift */,
 			);
 			path = MonsterTown;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 				5D54FB2329DE3BBB0081F342 /* main.swift in Sources */,
 				5D54FB2E29DF19FE0081F342 /* Zombie.swift in Sources */,
 				5D54FB2C29DF18810081F342 /* Monster.swift in Sources */,
+				5D54FB3029DF26850081F342 /* Vampire.swift in Sources */,
 				5D54FB2A29DF16BF0081F342 /* Town.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
