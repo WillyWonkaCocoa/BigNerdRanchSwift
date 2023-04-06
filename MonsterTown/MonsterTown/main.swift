@@ -9,7 +9,10 @@ import Foundation
 
 var myTown = Town()
 //var yourTown = myTown // Now there are two towns! structs/enums store the instance's entire value & are called value types that follow value semantics
-myTown.changePopulation(by: 500)
+let myTownSize = myTown.townSize
+print(myTownSize)
+myTown.changePopulation(by: 1_000_000)
+print("Size: \(myTown.townSize); population: \(myTown.population)")
 
 let fredTheZombie = Zombie() // classes store a reference to another location in memory where the instance is stored
 // the reference is copied and passed around: 64 bits (8 bytes) of memory regardless of the size of the actual instance
