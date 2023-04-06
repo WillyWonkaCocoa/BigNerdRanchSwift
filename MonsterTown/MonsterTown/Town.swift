@@ -21,16 +21,18 @@ struct Town {
     // lazy loading: value cannot be assigned immediately, costly in terms of memory/time, depends on unknown ext factors
     // value is calculated the first time it's accessed & never recalculated
     // prevents unsafe reference to uninitialized self
-    lazy var townSize: Size = {
+
+    // read-only compute property
+    var townSize: Size {
         switch population {
         case 0...10_000:
             return Size.small
-        case 10_0001...100_000:
+        case 10_001...100_000:
             return Size.medium
         default:
             return Size.large
         }
-    }() //if parentheses were omitted, the closure would be assigned to townSize instead of the result of the closure
+    }
     
     // instance method, called on a specific instance of Town
     func printDescription() {

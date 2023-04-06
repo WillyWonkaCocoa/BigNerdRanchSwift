@@ -12,6 +12,14 @@ import Foundation
 class Monster {
     var town: Town?
     var name = "Monster"
+    var victimPool: Int {
+        get {
+            return town?.population ?? 0
+        }
+        set(newVictimPool){
+            town?.population = newVictimPool
+        }
+    }
     
     // type methods, work with type level info (call other type methods and type properties) but not with any instance properties.
     
