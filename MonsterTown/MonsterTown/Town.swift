@@ -8,8 +8,15 @@
 import Foundation
 
 struct Town {
+    let region = "Middle"
     var population = 5_422
     var numberOfStoplights = 4
+    
+    enum Size {
+        case small
+        case medium
+        case large
+    }
     
     // instance method, called on a specific instance of Town
     func printDescription() {
