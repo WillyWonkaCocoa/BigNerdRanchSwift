@@ -10,6 +10,11 @@ import Foundation
 // inheritance is unique to classes, structures and enumerations do not have this feature
 // use final keyword on, class or methods, to prevent overriding
 class Monster {
+    // static properties cannot be overriden by a subclass, very definitive
+    static let isTerrifying = true
+    class var spookyNoise: String {
+        return "Grrr"
+    }
     var town: Town?
     var name = "Monster"
     var victimPool: Int {

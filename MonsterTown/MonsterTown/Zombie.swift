@@ -8,6 +8,10 @@
 import Foundation
 
 class Zombie: Monster {
+    // shorthand getter syntax. If not providing a setter, the get block can be omitted
+    override class var spookyNoise: String{
+        return "Brains..."
+    }
     var walksWithLimp = true
     
     func regenerate() {

@@ -8,6 +8,9 @@
 import Foundation
 
 struct Town {
+    // type property, shared by all instances of this type, require default value as they do not have initializers
+    // subclass cannot override a type property and need to the class keyword
+    static let world = "Earth"
     let region = "Middle"
     var population = 5_422 {
         // property observer, oldValue is the default parameter name, here we use oldPopulation
