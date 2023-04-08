@@ -9,7 +9,12 @@ import Foundation
 
 struct Town {
     let region = "Middle"
-    var population = 5_422
+    var population = 5_422 {
+        // property observer, oldValue is the default parameter name, here we use oldPopulation
+        didSet(oldPopulation){
+            print("The population has changed to \(population) from \(oldPopulation)")
+        }
+    }
     var numberOfStoplights = 4
     
     enum Size {
