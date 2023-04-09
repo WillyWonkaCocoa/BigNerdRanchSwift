@@ -7,18 +7,34 @@
 
 import Foundation
 
+// empty and memberwise (a parameter for each stored property on the instance) initilizers are synthsized by swift compiler
 struct Town {
     // type property, shared by all instances of this type, require default value as they do not have initializers
     // subclass cannot override a type property and need to the class keyword
     static let world = "Earth"
-    let region = "Middle"
-    var population = 5_422 {
+    let region: String
+    var mayor = Mayor()
+    var population: Int {
         // property observer, oldValue is the default parameter name, here we use oldPopulation
         didSet(oldPopulation){
-            print("The population has changed to \(population) from \(oldPopulation)")
+            if population < oldPopulation {
+                print("The population has changed to \(population) from \(oldPopulation)")
+                mayor.changeAnxietyLevel(by: 1)
+                mayor.printCondolences()
+            }
         }
     }
-    var numberOfStoplights = 4
+    var numberOfStoplights: Int
+    
+    init(region: String, population: Int, stoplights: Int) {
+        self.region = region
+        self.population = population
+        numberOfStoplights = stoplights
+    }
+    
+    init(population: Int, stoplights: Int) { // initializer delegation
+        self.init(region: "N/A", population: population, stoplights: stoplights)
+    }
     
     enum Size {
         case small
@@ -44,7 +60,7 @@ struct Town {
     
     // instance method, called on a specific instance of Town
     func printDescription() {
-        print("Population: \(population); number of stoplights: \(numberOfStoplights)")
+        print("Population: \(population); number of stoplights: \(numberOfStoplights); region: \(region)")
     }
     
     // must add mutating keyword if an instance method changes any properties

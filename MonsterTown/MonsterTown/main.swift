@@ -7,7 +7,9 @@
 
 import Foundation
 
-var myTown = Town()
+//var myTown = Town()
+var myTown = Town(population: 10_000, stoplights: 6) // free memberwise initializer
+myTown.printDescription()
 //var yourTown = myTown // Now there are two towns! structs/enums store the instance's entire value & are called value types that follow value semantics
 let myTownSize = myTown.townSize
 print(myTownSize)
@@ -47,3 +49,5 @@ print(Zombie.spookyNoise)
 if Zombie.isTerrifying {
     print("Run away!")
 }
+
+print("Mayor's anxiety level is \(myTown.mayor.anxietyLevel)")
