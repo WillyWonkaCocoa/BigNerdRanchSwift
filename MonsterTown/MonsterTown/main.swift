@@ -8,13 +8,13 @@
 import Foundation
 
 //var myTown = Town()
-var myTown = Town(population: 10_000, stoplights: 6) // free memberwise initializer
-myTown.printDescription()
+var myTown = Town(population: 0, stoplights: 6) // free memberwise initializer
+myTown?.printDescription()
 //var yourTown = myTown // Now there are two towns! structs/enums store the instance's entire value & are called value types that follow value semantics
-let myTownSize = myTown.townSize
-print(myTownSize)
-myTown.changePopulation(by: 1_000_000)
-print("Size: \(myTown.townSize); population: \(myTown.population)")
+let myTownSize = myTown?.townSize
+print(String(describing: myTownSize))
+myTown?.changePopulation(by: 1_000_000)
+print("Size: \(String(describing: myTown?.townSize)); population: \(String(describing: myTown?.population))")
 
 var fredTheZombie: Zombie? = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Fred") // classes store a reference to another location in memory where the instance is stored
 // the reference is copied and passed around: 64 bits (8 bytes) of memory regardless of the size of the actual instance
@@ -51,4 +51,4 @@ if Zombie.isTerrifying {
 }
 fredTheZombie = nil
 
-print("Mayor's anxiety level is \(myTown.mayor.anxietyLevel)")
+print("Mayor's anxiety level is \(String(describing: myTown?.mayor.anxietyLevel))")
