@@ -26,7 +26,10 @@ class Monster {
         }
     }
     
-    required init(town: Town? = nil, monsterName: String) { // required keyword means subclasses must override or inherit this initializer
+    required init?(town: Town? = nil, monsterName: String) { // required keyword means subclasses must override or inherit this initializer
+        guard !monsterName.isEmpty else {
+            return nil // failable initializer
+        }
         self.town = town
         name = monsterName
     }

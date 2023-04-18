@@ -28,18 +28,18 @@ fredTheZombie?.town?.printDescription()
 var convenientZombie = Zombie(limp: true, fallingApart: false)
 
 let buffyTheVampire = Vampire(town: myTown, monsterName: "Buffy")
-buffyTheVampire.town?.printDescription()
-buffyTheVampire.terrorizeTown()
-buffyTheVampire.town?.printDescription()
-buffyTheVampire.printThralls()
+buffyTheVampire?.town?.printDescription()
+buffyTheVampire?.terrorizeTown()
+buffyTheVampire?.town?.printDescription()
+buffyTheVampire?.printThralls()
 
-buffyTheVampire.terrorizeTown()
-buffyTheVampire.town?.printDescription()
-buffyTheVampire.printThralls()
+buffyTheVampire?.terrorizeTown()
+buffyTheVampire?.town?.printDescription()
+buffyTheVampire?.printThralls()
 
-buffyTheVampire.terrorizeTown()
-buffyTheVampire.town?.printDescription()
-buffyTheVampire.printThralls()
+buffyTheVampire?.terrorizeTown()
+buffyTheVampire?.town?.printDescription()
+buffyTheVampire?.printThralls()
 
 print("Victim pool: \(String(describing: fredTheZombie?.victimPool))") // accepts optional chaining
 fredTheZombie?.victimPool = 500
@@ -52,3 +52,7 @@ if Zombie.isTerrifying {
 fredTheZombie = nil
 
 print("Mayor's anxiety level is \(String(describing: myTown?.mayor.anxietyLevel))")
+
+
+var failableMonster = Monster(town: myTown, monsterName: "")
+print(String(describing: failableMonster?.name)) // -> prints nil

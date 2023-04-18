@@ -15,21 +15,21 @@ class Zombie: Monster {
     var walksWithLimp: Bool
     private(set) var isFallingApart:Bool // internal getter and private setter; setter cannot be more visible than getter, possible values: public, internal, private. Default visibility is internal
     
-    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
+    init?(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
         walksWithLimp = limp
         isFallingApart = fallingApart
         super.init(town: town, monsterName: monsterName)
     }
     
     // convenience initializer: will always call another convenience or designated initializer
-    convenience init(limp: Bool, fallingApart: Bool) {
+    convenience init?(limp: Bool, fallingApart: Bool) {
         self.init(limp: limp, fallingApart: fallingApart, town: nil, monsterName: "Fred")
         if walksWithLimp {
             print("This zombie has a bad knee.")
         }
     }
     
-    convenience required init(town: Town?, monsterName: String) {
+    convenience required init?(town: Town?, monsterName: String) {
         self.init(limp: false, fallingApart: false, town: town, monsterName: monsterName)
     }
     
