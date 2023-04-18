@@ -16,18 +16,18 @@ print(myTownSize)
 myTown.changePopulation(by: 1_000_000)
 print("Size: \(myTown.townSize); population: \(myTown.population)")
 
-let fredTheZombie = Zombie() // classes store a reference to another location in memory where the instance is stored
+var fredTheZombie: Zombie? = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Fred") // classes store a reference to another location in memory where the instance is stored
 // the reference is copied and passed around: 64 bits (8 bytes) of memory regardless of the size of the actual instance
 // classes are reference types and follow reference semantics
-fredTheZombie.town = myTown
-fredTheZombie.terrorizeTown()
-fredTheZombie.town?.printDescription()
+fredTheZombie?.terrorizeTown()
+fredTheZombie?.town?.printDescription()
 //(fredTheZombie as? Zombie)?.walksWithLimp = true
 //downcasting, which is unsafe! can force cast as! or conditional cast as?
 // upcasting is always safe, can check type with is keyword: is fredTheZombie is Zombie
 
-let buffyTheVampire = Vampire()
-buffyTheVampire.town = myTown
+var convenientZombie = Zombie(limp: true, fallingApart: false)
+
+let buffyTheVampire = Vampire(town: myTown, monsterName: "Buffy")
 buffyTheVampire.town?.printDescription()
 buffyTheVampire.terrorizeTown()
 buffyTheVampire.town?.printDescription()
@@ -41,13 +41,14 @@ buffyTheVampire.terrorizeTown()
 buffyTheVampire.town?.printDescription()
 buffyTheVampire.printThralls()
 
-print("Victim pool: \(fredTheZombie.victimPool)")
-fredTheZombie.victimPool = 500
-print("Victim pool: \(fredTheZombie.victimPool)")
+print("Victim pool: \(String(describing: fredTheZombie?.victimPool))") // accepts optional chaining
+fredTheZombie?.victimPool = 500
+print("Victim pool: \(String(describing: fredTheZombie?.victimPool))")
 
 print(Zombie.spookyNoise)
 if Zombie.isTerrifying {
     print("Run away!")
 }
+fredTheZombie = nil
 
 print("Mayor's anxiety level is \(myTown.mayor.anxietyLevel)")

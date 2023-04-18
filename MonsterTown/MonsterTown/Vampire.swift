@@ -15,7 +15,7 @@ class Vampire: Monster {
         if let population = town?.population {
             if population > 1{
                 town?.changePopulation(by: -1) //optional chaining, as unwrapping an optional creates a copy
-                thralls.append(Vampire())
+                thralls.append(Vampire(town: self.town, monsterName: self.name))
             }
         }
     }
